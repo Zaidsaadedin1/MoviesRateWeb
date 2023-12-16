@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.MovieList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.MovieCard {
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MovieCardInner {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MovieCard:hover .MovieCardInner {
+  transform: rotateY(180deg);
+}
+
+.MovieCardFront,
+.MovieCardBack {
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.MovieCardFront {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.MovieCardBack {
+  background-color: rgb(8, 8, 8);
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.MovieCardBack h2 {
+  color: rgb(255, 255, 255);
+  font-size: medium;
+}
+
+.MovieCardBack div {
+  margin-top: 20px;
+}
+
+.MovieCardFront img {
+  width: 200px;
+  height: 300px;
+  margin: 2px;
+}
+
+.MovieTitle h2 {
+  font-size: medium;
+}
+
+.MovieRate h3 {
+  font-size: medium;
+}
+
+/* Media queries for responsive design */
+
+/* Extra small devices (phones) */
+@media screen and (max-width: 576px) {
+  .MovieCard {
+      width: 100%;
+  }
+}
+
+/* Small devices (tablets) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .MovieCard {
+      width: 48%; /* or any desired percentage */
+  }
+}
+
+/* Medium devices (laptops) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .MovieCard {
+      width: 30%; /* or any desired percentage */
+  }
+}
+
+/* Large devices (desktops) */
+@media screen and (min-width: 1025px) {
+  .MovieCard {
+      width: 24%; /* or any desired percentage */
+  }
+}
